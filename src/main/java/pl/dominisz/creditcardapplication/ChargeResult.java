@@ -1,6 +1,7 @@
 package pl.dominisz.creditcardapplication;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
  * 11.06.2018
  */
 @Data
+@NoArgsConstructor
 public class ChargeResult {
 
     private LocalDateTime chargeDateTime;

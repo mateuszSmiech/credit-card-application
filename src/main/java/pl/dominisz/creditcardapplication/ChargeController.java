@@ -11,9 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ChargeController {
 
+    private final ChargeService chargeService;
+
+    public ChargeController(ChargeService chargeService) {
+        this.chargeService = chargeService;
+    }
+
     @PostMapping("/chargeRequests")
     public ChargeResult charge(@RequestBody ChargeRequest chargeRequest) {
-        return null;
+        return chargeService.charge(chargeRequest);
     }
 
 }
