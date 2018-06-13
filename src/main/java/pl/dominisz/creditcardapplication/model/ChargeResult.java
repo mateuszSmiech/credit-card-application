@@ -42,4 +42,11 @@ public class ChargeResult {
         chargeResult.setDeclineMessage(INVALID_AMOUNT);
         return chargeResult;
     }
+
+    public static ChargeResult forFailedCharge() {
+        ChargeResult chargeResult = new ChargeResult();
+        chargeResult.setSuccessful(false);
+        chargeResult.setDeclineMessage(INVALID_DATA);
+        return chargeResult;
+    }
 }
