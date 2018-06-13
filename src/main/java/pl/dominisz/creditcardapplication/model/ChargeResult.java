@@ -26,7 +26,7 @@ public class ChargeResult {
     private boolean successful;
     private String declineMessage;
 
-    public static ChargeResult invalidAuth(String message) {
+    private static ChargeResult invalidAuth(String message) {
         ChargeResult chargeResult = new ChargeResult();
         chargeResult.setSuccessful(false);
         chargeResult.setDeclineMessage(message);
@@ -42,32 +42,26 @@ public class ChargeResult {
     }
 
     public static ChargeResult forNonExistingCard() {
-        ChargeResult chargeResult = invalidAuth(INVALID_DATA);
-        return chargeResult;
+        return invalidAuth(INVALID_DATA);
     }
 
     public static ChargeResult forTooLargeAmount() {
-        ChargeResult chargeResult = invalidAuth(INVALID_AMOUNT);
-        return chargeResult;
+        return invalidAuth(INVALID_AMOUNT);
     }
 
     public static ChargeResult invalidCCV() {
-        ChargeResult chargeResult = invalidAuth(INVALID_CCV);
-        return chargeResult;
+        return invalidAuth(INVALID_CCV);
     }
 
     public static ChargeResult forInvalidOwnerData(){
-        ChargeResult chargeResult = invalidAuth(INVALID_OWNER);
-        return chargeResult;
+        return invalidAuth(INVALID_OWNER);
     }
 
     public static ChargeResult forExpiredDate() {
-        ChargeResult chargeResult = invalidAuth(INVALID_EXPIRY_DATE);
-        return chargeResult;
+        return invalidAuth(INVALID_EXPIRY_DATE);
     }
 
     public static ChargeResult forMinusAmount() {
-        ChargeResult chargeResult = invalidAuth(WRONG_AMOUNT);
-        return chargeResult;
+        return invalidAuth(WRONG_AMOUNT);
     }
 }
