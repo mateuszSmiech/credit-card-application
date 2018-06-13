@@ -1,8 +1,12 @@
-package pl.dominisz.creditcardapplication;
+package pl.dominisz.creditcardapplication.service;
 
 import org.springframework.stereotype.Service;
+import pl.dominisz.creditcardapplication.model.ChargeRequest;
+import pl.dominisz.creditcardapplication.model.ChargeResult;
+import pl.dominisz.creditcardapplication.model.CreditCard;
+import pl.dominisz.creditcardapplication.model.CreditCardEntity;
+import pl.dominisz.creditcardapplication.repository.CreditCardEntityRepository;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**

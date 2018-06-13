@@ -44,3 +44,18 @@ http://localhost:9090/creditCards/123456789
 Note that exposing full credit card data is not secure ;-)
 
 ## Test `/chargeRequests` endpoint
+
+```
+POST http://localhost:9090/chargeRequests
+Content-Type: application/json
+
+{
+  "creditCard": {
+    "number": "123456789",
+    "owner": "owner",
+    "expiryDate": "1/2/3",
+    "ccv": 200
+  },
+  "amount": "200"
+}
+```

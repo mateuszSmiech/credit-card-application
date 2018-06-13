@@ -1,8 +1,11 @@
-package pl.dominisz.creditcardapplication;
+package pl.dominisz.creditcardapplication.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import pl.dominisz.creditcardapplication.model.ChargeRequest;
+import pl.dominisz.creditcardapplication.model.ChargeResult;
+import pl.dominisz.creditcardapplication.service.ChargeService;
 
 /**
  * http://dominisz.pl

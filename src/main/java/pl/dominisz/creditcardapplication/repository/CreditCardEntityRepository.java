@@ -1,7 +1,8 @@
-package pl.dominisz.creditcardapplication;
+package pl.dominisz.creditcardapplication.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import pl.dominisz.creditcardapplication.model.CreditCardEntity;
 
 import java.util.Optional;
 

@@ -1,6 +1,9 @@
-package pl.dominisz.creditcardapplication;
+package pl.dominisz.creditcardapplication.service;
 
 import org.springframework.stereotype.Service;
+import pl.dominisz.creditcardapplication.model.CreditCardEntity;
+import pl.dominisz.creditcardapplication.exception.CreditCardEntityNotFoundException;
+import pl.dominisz.creditcardapplication.repository.CreditCardEntityRepository;
 
 import java.util.List;
 

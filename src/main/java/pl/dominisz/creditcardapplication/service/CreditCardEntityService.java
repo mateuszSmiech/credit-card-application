@@ -1,4 +1,6 @@
-package pl.dominisz.creditcardapplication;
+package pl.dominisz.creditcardapplication.service;
+
+import pl.dominisz.creditcardapplication.model.CreditCardEntity;
 
 import java.util.List;
 

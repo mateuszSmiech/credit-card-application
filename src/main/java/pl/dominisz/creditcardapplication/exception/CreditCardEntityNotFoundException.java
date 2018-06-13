@@ -1,4 +1,4 @@
-package pl.dominisz.creditcardapplication;
+package pl.dominisz.creditcardapplication.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

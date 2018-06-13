@@ -1,4 +1,4 @@
-package pl.dominisz.creditcardapplication;
+package pl.dominisz.creditcardapplication.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
