@@ -7,7 +7,7 @@ create database credit_card_application;
 create user 'creditcarduser'@'localhost' identified by 'creditcardpassword';
 grant all on credit_card_application.* to 'creditcarduser'@'localhost';
 
-SELECT * FROM credit_card_application.credit_cards;CREATE TABLE `credit_cards` (
+CREATE TABLE `credit_cards` (
   `id` bigint(20) NOT NULL,
   `amount` decimal(19,2) DEFAULT NULL,
   `ccv` int(11) NOT NULL,
