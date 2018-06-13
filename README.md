@@ -6,6 +6,17 @@
 create database credit_card_application;
 create user 'creditcarduser'@'localhost' identified by 'creditcardpassword';
 grant all on credit_card_application.* to 'creditcarduser'@'localhost';
+
+SELECT * FROM credit_card_application.credit_cards;CREATE TABLE `credit_cards` (
+  `id` bigint(20) NOT NULL,
+  `amount` decimal(19,2) DEFAULT NULL,
+  `ccv` int(11) NOT NULL,
+  `expiry_date` date DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `number` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```
 
 ## Insert some credit cards
