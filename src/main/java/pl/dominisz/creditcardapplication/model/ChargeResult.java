@@ -16,15 +16,20 @@ public class ChargeResult {
     private static final String INVALID_DATA = "Invalid credit card data";
     private static final String INVALID_AMOUNT = "Amount exceeds card limit";
     private static final String EMPTY = "";
+    private static final String INVALID_CCV = "Invalid CCV";
+    private static final String INVALID_OWNER = "Invalid Name or Last Name.";
+    private static final String INVALID_EXPIRY_DATE = "Invalid Expiry Date" ;
+    private static final String WRONG_AMOUNT = "Amount cannot be minus.";
+
 
     private LocalDateTime chargeDateTime;
     private boolean successful;
     private String declineMessage;
 
-    public static ChargeResult forNonExistingCard() {
+    public static ChargeResult invalidAuth(String message) {
         ChargeResult chargeResult = new ChargeResult();
         chargeResult.setSuccessful(false);
-        chargeResult.setDeclineMessage(INVALID_DATA);
+        chargeResult.setDeclineMessage(message);
         return chargeResult;
     }
 
@@ -36,10 +41,33 @@ public class ChargeResult {
         return chargeResult;
     }
 
+    public static ChargeResult forNonExistingCard() {
+        ChargeResult chargeResult = invalidAuth(INVALID_DATA);
+        return chargeResult;
+    }
+
     public static ChargeResult forTooLargeAmount() {
-        ChargeResult chargeResult = new ChargeResult();
-        chargeResult.setSuccessful(false);
-        chargeResult.setDeclineMessage(INVALID_AMOUNT);
+        ChargeResult chargeResult = invalidAuth(INVALID_AMOUNT);
+        return chargeResult;
+    }
+
+    public static ChargeResult invalidCCV() {
+        ChargeResult chargeResult = invalidAuth(INVALID_CCV);
+        return chargeResult;
+    }
+
+    public static ChargeResult forInvalidOwnerData(){
+        ChargeResult chargeResult = invalidAuth(INVALID_OWNER);
+        return chargeResult;
+    }
+
+    public static ChargeResult forExpiredDate() {
+        ChargeResult chargeResult = invalidAuth(INVALID_EXPIRY_DATE);
+        return chargeResult;
+    }
+
+    public static ChargeResult forMinusAmount() {
+        ChargeResult chargeResult = invalidAuth(WRONG_AMOUNT);
         return chargeResult;
     }
 }

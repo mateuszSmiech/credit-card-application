@@ -9,10 +9,6 @@ import pl.dominisz.creditcardapplication.service.CreditCardEntityService;
 
 import java.util.List;
 
-/**
- * http://dominisz.pl
- * 13.06.2018
- */
 @RestController
 @RequestMapping("/creditCards")
 public class CreditCardEntityController {

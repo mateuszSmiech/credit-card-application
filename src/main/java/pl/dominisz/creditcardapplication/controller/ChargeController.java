@@ -7,10 +7,6 @@ import pl.dominisz.creditcardapplication.model.ChargeRequest;
 import pl.dominisz.creditcardapplication.model.ChargeResult;
 import pl.dominisz.creditcardapplication.service.ChargeService;
 
-/**
- * http://dominisz.pl
- * 11.06.2018
- */
 @RestController
 public class ChargeController {
 

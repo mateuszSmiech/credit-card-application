@@ -7,10 +7,6 @@ import pl.dominisz.creditcardapplication.repository.CreditCardEntityRepository;
 
 import java.util.List;
 
-/**
- * http://dominisz.pl
- * 13.06.2018
- */
 @Service
 public class CreditCardEntityServiceImpl implements CreditCardEntityService {
 
