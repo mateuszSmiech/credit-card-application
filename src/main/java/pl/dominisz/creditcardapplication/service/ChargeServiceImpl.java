@@ -32,7 +32,7 @@ public class ChargeServiceImpl implements ChargeService {
                 .findByNumber(requestedCreditCard.getNumber());
 
         if (!optionalCreditCardEntity.isPresent()) {
-            return ChargeResult.forNonExistingCard();
+            return ChargeResult.forFailedCharge();
         }
 
         CreditCardEntity creditCardEntity = optionalCreditCardEntity.get();
@@ -51,7 +51,7 @@ public class ChargeServiceImpl implements ChargeService {
         }
 
         if (chargeRequest.getAmount().compareTo(BigDecimal.ZERO) <= 0) {
-            return ChargeResult.forFailedCharge();
+            return ChargeResult.forInvalidAmount();
         }
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
