@@ -22,7 +22,7 @@ public class MvcCreditCardEntityController {
         this.creditCardEntityService = creditCardEntityService;
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = {"/", "/all"})
     public String findAll(Model model) {
         model.addAttribute("creditCards", creditCardEntityService.findAll());
         return "creditCardList";
