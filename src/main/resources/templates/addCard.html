@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Create new credit card</h1>
-<form th:action="@{/addCard}"
+<form th:action="@{/mvc/creditCards/addCard}"
       th:object="${creditCardForm}" method="POST">
     First Name:
     <input type="text" th:field="*{firstName}" />
@@ -15,17 +15,8 @@
     Last Name:
     <input type="text" th:field="*{lastName}" />
     <br/>
-    Card number:
-    <input type="text" th:field="*{number}" />
-    <br/>
-    Expiry year:
-    <input type="text" th:field="*{expiryYear}" />
-    <br/>
-    Expiry month:
-    <input type="text" th:field="*{expiryMonth}" />
-    <br/>
-    CCV code:
-    <input type="text" th:field="*{ccv}" />
+    Card amount:
+    <input type="text" th:field="*{amount}" />
     <br/>
     <input type="submit" value="Add credit card" />
 </form>

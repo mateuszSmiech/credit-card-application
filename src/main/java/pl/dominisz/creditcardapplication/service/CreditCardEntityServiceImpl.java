@@ -16,9 +16,11 @@ import java.util.List;
 public class CreditCardEntityServiceImpl implements CreditCardEntityService {
 
     private final CreditCardEntityRepository creditCardEntityRepository;
+    private final CreditCardGenerator creditCardGenerator;
 
-    public CreditCardEntityServiceImpl(CreditCardEntityRepository creditCardEntityRepository) {
+    public CreditCardEntityServiceImpl(CreditCardEntityRepository creditCardEntityRepository, CreditCardGenerator creditCardGenerator) {
         this.creditCardEntityRepository = creditCardEntityRepository;
+        this.creditCardGenerator = creditCardGenerator;
     }
 
     @Override
@@ -34,9 +36,17 @@ public class CreditCardEntityServiceImpl implements CreditCardEntityService {
 
     @Override
     public void create(CreditCardForm creditCardForm) {
+        CreditCardEntity creditCardEntity = new CreditCardEntity();
 
+        creditCardEntity.setFirstName(creditCardForm.getFirstName());
+        creditCardEntity.setLastName(creditCardForm.getLastName());
+        creditCardEntity.setAmount(creditCardForm.getAmount());
 
-        //TODO finalnie ma powstać CreditCardEntity
+        creditCardEntity.setNumber(creditCardGenerator.generateNumber());
+        creditCardEntity.setCcv(creditCardGenerator.generateCCV());
+        creditCardEntity.setExpiryDate(creditCardGenerator.generateExpiryDate());
+
+        creditCardEntityRepository.save(creditCardEntity);
     }
 
 }

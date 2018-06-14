@@ -44,6 +44,6 @@ public class MvcCreditCardEntityController {
     public String createCard(@ModelAttribute("creditCardForm") CreditCardForm creditCardForm,
                              Model model) {
         creditCardEntityService.create(creditCardForm);
-        return "redirect:/all";
+        return "redirect:/mvc/creditCards/all";
     }
 }
