@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create new credit card</h1>
+<form th:action="@{/addCard}"
+      th:object="${creditCardForm}" method="POST">
+    First Name:
+    <input type="text" th:field="*{firstName}" />
+    <br/>
+    Last Name:
+    <input type="text" th:field="*{lastName}" />
+    <br/>
+    Card number:
+    <input type="text" th:field="*{number}" />
+    <br/>
+    Expiry year:
+    <input type="text" th:field="*{expiryYear}" />
+    <br/>
+    Expiry month:
+    <input type="text" th:field="*{expiryMonth}" />
+    <br/>
+    CCV code:
+    <input type="text" th:field="*{ccv}" />
+    <br/>
+    <input type="submit" value="Add credit card" />
+</form>
+</body>
+</html>

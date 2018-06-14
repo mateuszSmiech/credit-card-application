@@ -3,6 +3,7 @@ package pl.dominisz.creditcardapplication.service;
 import org.springframework.stereotype.Service;
 import pl.dominisz.creditcardapplication.model.CreditCardEntity;
 import pl.dominisz.creditcardapplication.exception.CreditCardEntityNotFoundException;
+import pl.dominisz.creditcardapplication.model.CreditCardForm;
 import pl.dominisz.creditcardapplication.repository.CreditCardEntityRepository;
 
 import java.util.List;
@@ -29,6 +30,13 @@ public class CreditCardEntityServiceImpl implements CreditCardEntityService {
     public CreditCardEntity findByNumber(String number) {
         return creditCardEntityRepository.findByNumber(number)
                 .orElseThrow(CreditCardEntityNotFoundException::new);
+    }
+
+    @Override
+    public void create(CreditCardForm creditCardForm) {
+
+
+        //TODO finalnie ma powstać CreditCardEntity
     }
 
 }

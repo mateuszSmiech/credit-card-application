@@ -1,11 +1,11 @@
 package pl.dominisz.creditcardapplication.mvccontroller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.dominisz.creditcardapplication.model.CreditCardEntity;
+import pl.dominisz.creditcardapplication.model.CreditCardForm;
 import pl.dominisz.creditcardapplication.service.CreditCardEntityService;
 
 /**
@@ -34,4 +34,16 @@ public class MvcCreditCardEntityController {
         return "creditCard";
     }
 
+    @GetMapping(path = "/addCard")
+    public String addCardForm(Model model) {
+        model.addAttribute("creditCardForm", new CreditCardForm());
+        return "addCard";
+    }
+
+    @PostMapping(path = "/addCard")
+    public String createCard(@ModelAttribute("creditCardForm") CreditCardForm creditCardForm,
+                             Model model) {
+        creditCardEntityService.create(creditCardForm);
+        return "redirect:/all";
+    }
 }
