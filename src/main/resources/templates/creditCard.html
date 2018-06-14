@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Application</title>
+</head>
+<body>
+<h1>Credit card details</h1>
+<p th:utext="'First name: ' + ${creditCard.firstName}"></p>
+<p th:utext="'Last name:' + ${creditCard.lastName}"></p>
+<p th:utext="'Expiry date:' + ${creditCard.expiryDate}"></p>
+<p th:utext="'CCV: ' + ${creditCard.ccv}"></p>
+<p th:utext="'Amount: ' + ${creditCard.amount}"></p>
+</body>
+</html>
