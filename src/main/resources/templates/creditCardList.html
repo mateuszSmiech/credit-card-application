@@ -1,10 +1,25 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Credit Card Application</title>
 </head>
 <body>
-List of all credit cards will be here
+<h1>Credit card list</h1>
+<div>
+    <table border="1">
+        <tr>
+            <th>Owner</th>
+            <th>Card number</th>
+            <th>Card details</th>
+        </tr>
+        <tr th:each ="creditCard : ${creditCards}">
+            <td th:utext="${creditCard.firstName + ' ' + creditCard.lastName}">...</td>
+            <td th:utext="${creditCard.number}">...</td>
+            <td><a th:href="@{/mvc/creditCards/{number}(number=${creditCard.number})}">Show card details</a></td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
