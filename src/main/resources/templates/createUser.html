@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<form th:action="add" th:object="${creditCardUserForm}" method="POST">
+    Username:
+<input type="text" th:field="*{username}"/>
+    Password:
+    <input type="text" th:field="*{password}"/>
+    E-mail:
+<input type="email" th:field="*{email}"/>
+    <button type="submit">Register</button>
+</form>
+
 </body>
 </html>

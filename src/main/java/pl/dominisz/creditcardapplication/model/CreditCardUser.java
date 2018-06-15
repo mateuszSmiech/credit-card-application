@@ -7,10 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * http://dominisz.pl
- * 15.06.2018
- */
 @Entity
 @Data
 @NoArgsConstructor

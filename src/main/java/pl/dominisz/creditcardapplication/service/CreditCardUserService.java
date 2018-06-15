@@ -42,4 +42,9 @@ public class CreditCardUserService implements UserDetailsService {
                 .build();
     }
 
+    public void createUser(CreditCardUser creditCardUser) {
+        creditCardUserRepository.save(creditCardUser);
+
+    }
+
 }
