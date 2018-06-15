@@ -24,5 +24,10 @@
 <div>
     <a th:href="@{/mvc/creditCards/addCard}">Add new credit card</a>
 </div>
+<div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
 </body>
 </html>
