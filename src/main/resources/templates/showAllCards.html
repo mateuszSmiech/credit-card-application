@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Credit cards</title>
+</head>
+<body>
+
+<h2>Credit Card List</h2>
+<table border="1px">
+    <tr>
+        <th>CreditCard Number</th>
+        <th>Owner</th>
+    </tr>
+    <tr th:each ="cardlist : ${creditCard}">
+        <td th:utext="${cardlist.number}">...</td>
+        <td th:utext="${cardlist.firstName}+ ' ' + ${cardlist.lastName}">...</td>
+        <td><a th:href="@{showDetail/{number} (number=${cardlist.id})}">Show Details</a> </td>
+    </tr>
+</table>
+
+<a th:href="@{/mvc/creditCards/addCard}">Dodaj Klienta</a>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>

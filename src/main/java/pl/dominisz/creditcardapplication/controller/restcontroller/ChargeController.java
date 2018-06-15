@@ -1,4 +1,4 @@
-package pl.dominisz.creditcardapplication.controller;
+package pl.dominisz.creditcardapplication.controller.restcontroller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

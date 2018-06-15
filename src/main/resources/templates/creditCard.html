@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit cards</title>
+</head>
+<body>
+<h1 th:utext="${'Credit card of: '+ creditCard.getFirstName() + ' '+ creditCard.getLastName()}"></h1>
+<p th:utext="${'Id: '+ creditCard.getId()}">...</p>
+<p th:utext="${'Credit Card number: '+ creditCard.getNumber()}">...</p>
+<p th:utext="${'Expiry Date: '+ creditCard.getExpiryDate()}">...</p>
+<p th:utext="${'CCV: '+ creditCard.getCcv()}">...</p>
+<p th:utext="${'Available amount: ' + creditCard.getAmount()}">...</p>
+
+</br>
+<a th:href="@{/mvc/creditCards/cardlist}">Powrót</a>
+</body>
+</html>

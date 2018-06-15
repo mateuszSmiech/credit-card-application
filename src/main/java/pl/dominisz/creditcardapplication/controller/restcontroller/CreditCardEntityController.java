@@ -1,4 +1,4 @@
-package pl.dominisz.creditcardapplication.controller;
+package pl.dominisz.creditcardapplication.controller.restcontroller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

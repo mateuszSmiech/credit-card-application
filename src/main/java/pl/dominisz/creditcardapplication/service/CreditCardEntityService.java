@@ -13,4 +13,8 @@ public interface CreditCardEntityService {
     List<CreditCardEntity> findAll();
 
     CreditCardEntity findByNumber(String number);
+
+    CreditCardEntity findById(Long id);;
+
+    void addCreditCard(CreditCardEntity creditCardEntity);
 }
