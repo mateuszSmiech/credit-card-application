@@ -10,7 +10,7 @@ grant all on credit_card_application.* to 'creditcarduser'@'localhost';
 use credit_card_application;
 
 CREATE TABLE `credit_cards` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `amount` decimal(19,2) DEFAULT NULL,
   `ccv` int(11) NOT NULL,
   `expiry_date` date DEFAULT NULL,
@@ -71,4 +71,24 @@ Content-Type: application/json
   },
   "amount": "200"
 }
+```
+
+## Create table for application users
+
+```
+CREATE TABLE `credit_card_user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+```
+
+## Insert users
+
+```
+insert into credit_card_user(id, username, password, email) values(1, 'user001', 'user001', 'user001@creditcard.com');
+insert into credit_card_user(id, username, password, email) values(2, 'user002', 'user002', 'user002@creditcard.com');
+insert into credit_card_user(id, username, password, email) values(3, 'admin', 'secret', 'admin@creditcard.com');
 ```
